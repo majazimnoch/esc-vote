@@ -7,6 +7,32 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Eurovision 2024</h1>
+        <h2>Voting card</h2>
+        <div class="voting-box">
+            <form action="#">
+                <div class="voting-row">
+                    <div class="voting-item">
+                        <label for="spain-country">Spain</label>
+                    </div>
+                    <div class="voting-item">
+                        <input type="number" id="spain-voice" name="spain-voice" min="1" max="10">
+                    </div>
+                    <div class="voting-item">
+                        <input type="number" id="spain-performance" name="spain-performance" min="1" max="10">
+                    </div>
+                    <div class="voting-item">
+                        <input type="number" id="spain-melody" name="spain-melody" min="1" max="10">
+                    </div>
+                    <div class="voting-item">
+                        <span id="spain-overall">0</span>
+                    </div>
+                </div>
+                <!-- More rows like the one above -->
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
