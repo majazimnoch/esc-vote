@@ -1,18 +1,25 @@
-const totalVoice = document.getElementById("voice");
-const totalMusic = document.getElementById("music");
-const totalPerformance = document.getElementById("performance");
-const overallSum = document.getElementById("sum");
+// Get all the input fields and spans
+const voices = document.querySelectorAll(".voice");
+const musics = document.querySelectorAll(".music");
+const performances = document.querySelectorAll(".performance");
+const sums = document.querySelectorAll(".sum");
 
-const updateTotal = () => {
-  const voiceValue = parseInt(totalVoice.value) || 0;
-  const musicValue = parseInt(totalMusic.value) || 0;
-  const performanceValue = parseInt(totalPerformance.value) || 0;
+// Function to update total for a particular row
+const updateTotal = (index) => {
+  const voiceValue = parseInt(voices[index].value) || 0;
+  const musicValue = parseInt(musics[index].value) || 0;
+  const performanceValue = parseInt(performances[index].value) || 0;
 
   const total = voiceValue + musicValue + performanceValue;
 
-  overallSum.textContent = total;
+  sums[index].textContent = total;
 };
 
-document.querySelector("form").addEventListener("input", updateTotal);
-
-updateTotal();
+// Add event listeners to all input fields
+document.querySelectorAll("input").forEach((input, index) => {
+  input.addEventListener("input", () => {
+    // Calculate the row index based on the index of the input
+    const rowIndex = Math.floor(index / 3);
+    updateTotal(rowIndex);
+  });
+});
