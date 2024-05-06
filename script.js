@@ -23,3 +23,36 @@ document.querySelectorAll("input").forEach((input, index) => {
     updateTotal(rowIndex);
   });
 });
+
+const findHighestScoreLabel = () => {
+  let highestScore = -1;
+  let highestScoreLabel = "";
+
+  sums.forEach((sum, index) => {
+    const score = parseInt(sum.textContent);
+    if (score > highestScore) {
+      highestScore = score;
+      highestScoreLabel =
+        document.querySelectorAll(".voting-row label")[index].textContent;
+    }
+  });
+
+  return highestScoreLabel;
+};
+
+// Function to update the winning country heading
+const updateWinningCountry = () => {
+  const winningCountryHeading = document.querySelector(".winning-country");
+  winningCountryHeading.textContent =
+    "The winning country: " + findHighestScoreLabel();
+};
+
+// Call the function initially to display the winning country
+updateWinningCountry();
+
+// Watch for changes in the scores and update the winning country heading accordingly
+document.querySelectorAll("input").forEach((input) => {
+  input.addEventListener("input", () => {
+    updateWinningCountry();
+  });
+});
