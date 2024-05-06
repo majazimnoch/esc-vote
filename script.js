@@ -1,3 +1,17 @@
+// Function to add a new number bigger by 1 to each new element
+const addNewNumber = () => {
+  // Select all the elements with the class 'here'
+  const numberDivs = document.querySelectorAll(".here");
+
+  // Loop through each element with the class 'here' and update its content
+  numberDivs.forEach((div, index) => {
+    div.textContent = index + 1 + ". "; // Increment the number by 1 for each new element
+  });
+};
+
+// Call the function initially to add numbers to existing elements
+addNewNumber();
+
 // Get all the input fields and spans
 const voices = document.querySelectorAll(".voice");
 const musics = document.querySelectorAll(".music");
