@@ -4,50 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Eurovision Voting</title>
+    <title>Document</title>
 </head>
 <body>
     <div class="container">
         <h1>Eurovision 2024</h1>
         <h2>Voting card</h2>
         <div class="voting-box">
-            <form action="#" id="voting-form">
+            <form action="#">
                 <div class="voting-row">
-                    <div class="voting-item">
                         <label for="spain-country">Spain</label>
-                    </div>
-                    <div class="voting-item">
-                        <input type="number" id="spain-voice" name="spain-voice" min="1" max="10" onchange="calculateOverall('spain')">
-                    </div>
-                    <div class="voting-item">
-                        <input type="number" id="spain-performance" name="spain-performance" min="1" max="10" onchange="calculateOverall('spain')">
-                    </div>
-                    <div class="voting-item">
-                        <input type="number" id="spain-melody" name="spain-melody" min="1" max="10" onchange="calculateOverall('spain')">
-                    </div>
-                    <div class="voting-item">
-                        <span id="spain-overall">0</span>
+                        <input type="number" id="voice" min="0" max="10">
+                        <input type="number" id="music" min="0" max="10">
+                        <input type="number" id="performance" min="0" max="10">
+                        <span id="overall">0</span>
                     </div>
                 </div>
-                <!-- More rows like the one above -->
-                <div class="voting-row">
-                    <div class="voting-item">
-                        <label for="spain-country">Poland</label>
-                    </div>
-                    <div class="voting-item">
-                        <input type="number" id="spain-voice" name="spain-voice" min="1" max="10" onchange="calculateOverall('spain')">
-                    </div>
-                    <div class="voting-item">
-                        <input type="number" id="spain-performance" name="spain-performance" min="1" max="10" onchange="calculateOverall('spain')">
-                    </div>
-                    <div class="voting-item">
-                        <input type="number" id="spain-melody" name="spain-melody" min="1" max="10" onchange="calculateOverall('spain')">
-                    </div>
-                    <div class="voting-item">
-                        <span id="spain-overall">0</span>
-                    </div>
-                </div>
-                <!-- More rows like the one above -->
             </form>
         </div>
     </div>
