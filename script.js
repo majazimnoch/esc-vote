@@ -1,37 +1,18 @@
-function calculateOverall(country) {
-    var voice = parseInt(document.getElementById(country + "-voice").value);
-    var performance = parseInt(document.getElementById(country + "-performance").value);
-    var melody = parseInt(document.getElementById(country + "-melody").value);
+const totalVoice = document.getElementById("voice");
+const totalMusic = document.getElementById("music");
+const totalPerformance = document.getElementById("performance");
+const overallSum = document.getElementById("sum");
 
-    var overall = voice + performance + melody;
+const updateTotal = () => {
+  const voiceValue = parseInt(totalVoice.value) || 0;
+  const musicValue = parseInt(totalMusic.value) || 0;
+  const performanceValue = parseInt(totalPerformance.value) || 0;
 
-    document.getElementById(country + "-overall").textContent = overall;
+  const total = voiceValue + musicValue + performanceValue;
 
-    highlightWinner();
-}
+  overallSum.textContent = total;
+};
 
-function highlightWinner() {
-    var maxOverall = 0;
-    var winnerCountry = "";
+document.querySelector("form").addEventListener("input", updateTotal);
 
-    var rows = document.querySelectorAll(".voting-row");
-
-    rows.forEach(function(row) {
-        var overall = parseInt(row.querySelector(".voting-item:last-child span").textContent);
-        if (overall > maxOverall) {
-            maxOverall = overall;
-            winnerCountry = row.querySelector(".voting-item:first-child label").textContent;
-        }
-    });
-
-    rows.forEach(function(row) {
-        var overall = parseInt(row.querySelector(".voting-item:last-child span").textContent);
-        if (overall === maxOverall) {
-            row.querySelector(".voting-item:last-child span").style.color = "red";
-        } else {
-            row.querySelector(".voting-item:last-child span").style.color = "black";
-        }
-    });
-
-    document.getElementById("winner").textContent = winnerCountry;
-}
+updateTotal();
