@@ -81,10 +81,17 @@ label {
     gap: 10px;
 }
 .sum {
-    display: flex;
-    flex-direction: row;
-    border: 1px red solid;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 25px;
 }
+
 .pagination-buttons {
     display: flex;
     flex-direction: row;
@@ -97,11 +104,22 @@ label {
     font-size: 25px;
     border-radius: 5px;
     font-family: "Teachers", sans-serif;
+    transition: all 0.3s ease;
 }
 
 #previous-button:hover, #next-button:hover {
     border: 1px solid var(--primary-color);
-   color: #f2b024;
+    color: var(--white);
     background-color: transparent;
    
 }
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
