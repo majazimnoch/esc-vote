@@ -1,10 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
 * {
     padding: 0;
     margin: 0;
 }
 
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 800 */
+
+.teachers-test {
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+    --primary-color: #173877;
+    --secondary-color: #f2b024;
+    --detail-color: #e68263;
+    --detail-two: #a775c6;
+    --white: #f7f5f5;
+    --black: rgb(7, 7, 7);
+}
+
 body {
-    background-color: rgb(232, 245, 232);
+    background-color: var(--white);
+    font-family: "Teachers", sans-serif;
+
 }
 
 .container {
@@ -14,13 +37,46 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+padding: 20px;
     border: 1px red solid;
+}
+
+.voting-box {
+ 
 }
 
 .voting-row {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px green solid;
+}
+
+.here {
+    border: 1px orange solid;
+}
+
+label {
+    border: 2px yellow solid;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.vote-item {
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sum {
+    display: flex;
+    flex-direction: row;
+    border: 1px red solid;
 }
