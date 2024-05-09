@@ -26,19 +26,18 @@ const hideAllExceptFirst = () => {
 
 hideAllExceptFirst();
 
-// event listeners to btns
-
+// Event listeners for next and previous buttons
 const nextButton = document.getElementById("next-button");
 nextButton.addEventListener("click", () => {
-  // find the index of the currently visible voting row
+  // Find the index of the currently visible voting row
   const visibleIndex = Array.from(votingRows).findIndex(
     (row) => row.style.display !== "none"
   );
 
-  // hide the current voting-row
+  // Hide the current voting-row
   votingRows[visibleIndex].style.display = "none";
 
-  // show the next voting row if exists otherwise loop back to the first
+  // Show the next voting row if exists, otherwise loop back to the first
   const nextIndex = (visibleIndex + 1) % votingRows.length;
   votingRows[nextIndex].style.display = "flex";
 });
@@ -49,7 +48,7 @@ previousButton.addEventListener("click", () => {
     (row) => row.style.display !== "none"
   );
 
-  // hide the current voting-row
+  // Hide the current voting-row
   votingRows[visibleIndex].style.display = "none";
 
   const previousIndex =
@@ -80,12 +79,15 @@ document.querySelectorAll("input").forEach((input, index) => {
     // Calculate the row index based on the index of the input
     const rowIndex = Math.floor(index / 3);
     updateTotal(rowIndex);
+    updateWinningCountries(); // Update winning country whenever input changes
   });
 });
 
-const findHighestScoreLabel = () => {
+// Function to find the labels with the highest score
+const findHighestScoreLabelsAndPoints = () => {
   let highestScore = -1;
   let highestScoreLabels = [];
+  let highestScorePoints = 0;
 
   sums.forEach((sum, index) => {
     const score = parseInt(sum.textContent);
@@ -94,35 +96,32 @@ const findHighestScoreLabel = () => {
       highestScoreLabels = [
         document.querySelectorAll(".voting-row label")[index].textContent,
       ];
+      highestScorePoints = score;
     } else if (score === highestScore) {
       highestScoreLabels.push(
         document.querySelectorAll(".voting-row label")[index].textContent
       );
+      highestScorePoints += score;
     }
   });
 
-  return highestScoreLabels;
+  return { labels: highestScoreLabels, points: highestScorePoints };
 };
 
-// Function to update the winning country heading
+// Function to update the winning country and number of points in the final results form
 const updateWinningCountries = () => {
-  const winningCountryHeading = document.querySelector(".winning-country");
-  const winningCountryLabels = findHighestScoreLabel();
-  if (winningCountryLabels.length === 1) {
-    winningCountryHeading.textContent =
-      "The winning country: " + winningCountryLabels[0];
+  const winningCountrySpan = document.getElementById("winner");
+  const pointsSpan = document.getElementById("points");
+
+  const { labels, points } = findHighestScoreLabelsAndPoints();
+  if (labels.length === 1) {
+    winningCountrySpan.textContent = labels[0];
+    pointsSpan.textContent = points;
   } else {
-    winningCountryHeading.textContent =
-      "The winning countries: " + winningCountryLabels.join(", ");
+    winningCountrySpan.textContent = labels.join(", ");
+    pointsSpan.textContent = points / labels.length; // Divide total points by the number of winners
   }
 };
 
-// Call the function initially to display the winning country
+// Call the function initially to display the winning country and number of points
 updateWinningCountries();
-
-// Watch for changes in the scores and update the winning country heading accordingly
-document.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("input", () => {
-    updateWinningCountries();
-  });
-});
