@@ -12,6 +12,51 @@ const addNewNumber = () => {
 // Call the function initially to add numbers to existing elements
 addNewNumber();
 
+// Get all the voting row elements
+const votingRows = document.querySelectorAll(".voting-row");
+
+// Function to hide all voting-row elements except the first one
+const hideAllExceptFirst = () => {
+  votingRows.forEach((row, index) => {
+    if (index !== 0) {
+      row.style.display = "none";
+    }
+  });
+};
+
+hideAllExceptFirst();
+
+// event listeners to btns
+
+const nextButton = document.getElementById("next-button");
+nextButton.addEventListener("click", () => {
+  // find the index of the currently visible voting row
+  const visibleIndex = Array.from(votingRows).findIndex(
+    (row) => row.style.display !== "none"
+  );
+
+  // hide the current voting-row
+  votingRows[visibleIndex].style.display = "none";
+
+  // show the next voting row if exists otherwise loop back to the first
+  const nextIndex = (visibleIndex + 1) % votingRows.length;
+  votingRows[nextIndex].style.display = "flex";
+});
+
+const previousButton = document.getElementById("previous-button");
+previousButton.addEventListener("click", () => {
+  const visibleIndex = Array.from(votingRows).findIndex(
+    (row) => row.style.display !== "none"
+  );
+
+  // hide the current voting-row
+  votingRows[visibleIndex].style.display = "none";
+
+  const previousIndex =
+    (visibleIndex - 1 + votingRows.length) % votingRows.length;
+  votingRows[previousIndex].style.display = "flex";
+});
+
 // Get all the input fields and spans
 const voices = document.querySelectorAll(".voice");
 const musics = document.querySelectorAll(".music");

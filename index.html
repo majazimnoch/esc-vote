@@ -12,49 +12,80 @@
         <h2>Voting card</h2>
         <div class="voting-box">
             <form action="#">
-                <div class="voting-row">
-                    <div class="here">1.</div>
-                    <label for="spain-country">Spain</label>
-                    <div class="column">
-                        <div>
-                            <p>Voice</p>
-                            <input type="number" id="voice1" class="voice" min="0" max="10">
+                <div class="voting-container">
+
+                    <div class="voting-row">
+                        <div class="here">1.</div>
+                        <label for="spain-country">Spain</label>
+                        <div class="column">
+                            <div>
+                                <p>Voice</p>
+                                <input type="number" id="voice1" class="voice" min="0" max="10">
+                            </div>
+                            <div>
+                                <p>Music</p>
+                                <input type="number" id="music1" class="music" min="0" max="10">
+                            </div>
+                            <div>
+                                <p>Performance</p>
+                                <input type="number" id="performance1" class="performance" min="0" max="10">
+                            </div>
                         </div>
-                        <div>
-                            <p>Music</p>
-                            <input type="number" id="music1" class="music" min="0" max="10">
-                        </div>
-                        <div>
-                            <p>Performance</p>
-                            <input type="number" id="performance1" class="performance" min="0" max="10">
-                        </div>
+                        <span class="sum">0</span>
                     </div>
-                    <span class="sum">0</span>
-                </div>
-    
-                <div class="voting-row">
-                    <div class="here">1.</div>
-                    <label for="spain-country">Poland</label>
-                    <div class="column">
-                        <div>
-                            <p>Voice</p>
-                            <input type="number" id="voice1" class="voice" min="0" max="10">
+        
+                    <div class="voting-row">
+                        <div class="here">1.</div>
+                        <label for="spain-country">Poland</label>
+                        <div class="column">
+                            <div>
+                                <p>Voice</p>
+                                <input type="number" id="voice1" class="voice" min="0" max="10">
+                            </div>
+                            <div>
+                                <p>Music</p>
+                                <input type="number" id="music1" class="music" min="0" max="10">
+                            </div>
+                            <div>
+                                <p>Performance</p>
+                                <input type="number" id="performance1" class="performance" min="0" max="10">
+                            </div>
                         </div>
-                        <div>
-                            <p>Music</p>
-                            <input type="number" id="music1" class="music" min="0" max="10">
-                        </div>
-                        <div>
-                            <p>Performance</p>
-                            <input type="number" id="performance1" class="performance" min="0" max="10">
-                        </div>
+                        <span class="sum">0</span>
                     </div>
-                    <span class="sum">0</span>
+
+                    <div class="voting-row">
+                        <div class="here">1.</div>
+                        <label for="spain-country">Poland</label>
+                        <div class="column">
+                            <div>
+                                <p>Voice</p>
+                                <input type="number" id="voice1" class="voice" min="0" max="10">
+                            </div>
+                            <div>
+                                <p>Music</p>
+                                <input type="number" id="music1" class="music" min="0" max="10">
+                            </div>
+                            <div>
+                                <p>Performance</p>
+                                <input type="number" id="performance1" class="performance" min="0" max="10">
+                            </div>
+                        </div>
+                        <span class="sum">0</span>
+                    </div>
+
                 </div>
 
             </form>
-            <h2 class="winning-country">The winning country: </h2>
         </div>
+
+        <div class="pagination-buttons">
+            <button id="previous-button">Previous</button>
+            <button id="next-button">Next</button>
+        </div>
+
+        <h2 class="winning-country">The winning country: </h2>
+        
     </div>
     <script src="script.js"></script>
 </body>

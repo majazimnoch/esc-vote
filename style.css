@@ -14,9 +14,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    border: 1px red solid;
 }
 
 .voting-row {
     display: flex;
     flex-direction: row;
+
+    border: 1px green solid;
 }
