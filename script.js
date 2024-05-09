@@ -85,33 +85,44 @@ document.querySelectorAll("input").forEach((input, index) => {
 
 const findHighestScoreLabel = () => {
   let highestScore = -1;
-  let highestScoreLabel = "";
+  let highestScoreLabels = [];
 
   sums.forEach((sum, index) => {
     const score = parseInt(sum.textContent);
     if (score > highestScore) {
       highestScore = score;
-      highestScoreLabel =
-        document.querySelectorAll(".voting-row label")[index].textContent;
+      highestScoreLabels = [
+        document.querySelectorAll(".voting-row label")[index].textContent,
+      ];
+    } else if (score === highestScore) {
+      highestScoreLabels.push(
+        document.querySelectorAll(".voting-row label")[index].textContent
+      );
     }
   });
 
-  return highestScoreLabel;
+  return highestScoreLabels;
 };
 
 // Function to update the winning country heading
-const updateWinningCountry = () => {
+const updateWinningCountries = () => {
   const winningCountryHeading = document.querySelector(".winning-country");
-  winningCountryHeading.textContent =
-    "The winning country: " + findHighestScoreLabel();
+  const winningCountryLabels = findHighestScoreLabel();
+  if (winningCountryLabels.length === 1) {
+    winningCountryHeading.textContent =
+      "The winning country: " + winningCountryLabels[0];
+  } else {
+    winningCountryHeading.textContent =
+      "The winning countries: " + winningCountryLabels.join(", ");
+  }
 };
 
 // Call the function initially to display the winning country
-updateWinningCountry();
+updateWinningCountries();
 
 // Watch for changes in the scores and update the winning country heading accordingly
 document.querySelectorAll("input").forEach((input) => {
   input.addEventListener("input", () => {
-    updateWinningCountry();
+    updateWinningCountries();
   });
 });
