@@ -19,29 +19,41 @@
     --primary-color: #173877;
     --secondary-color: #f2b024;
     --detail-color: #e68263;
+    --detail-color-hover: #e68163d6;
     --detail-two: #a775c6;
     --white: #f7f5f5;
     --black: rgb(7, 7, 7);
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: var(--white);
     font-family: "Teachers", sans-serif;
     max-height: 100vh;
+    color: var(--primary-color)!important;
 
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 35px;
+    color: var(--secondary-color);
 }
 
 .container {
     margin: 20px auto;
     max-width: 400px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
     border: 1px red solid;
-    background-color: #a775c6;
-    color: #f7f5f5;
+    color: var(--black);
+    gap: 20px;
 }
 
 .voting-box {
@@ -64,6 +76,8 @@ body {
 
 label {
     border: 2px yellow solid;
+    font-size: 20px;
+    color: #e68263;
 }
 
 .column {
@@ -71,14 +85,16 @@ label {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .vote-item {
     border: 1px black solid;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
+    font-size: 20px;
 }
 .sum {
     display: flex; /* Use flexbox */
@@ -88,7 +104,7 @@ label {
     height: 50px;
     border-radius: 50%;
     background-color: var(--secondary-color);
-    color: #fff;
+    color: black;
     font-size: 25px;
 }
 
@@ -98,19 +114,20 @@ label {
     gap:20px;
 }
 #previous-button, #next-button {
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--white);
     padding: 18px 12px;
-    background-color: var(--white);
+    background-color: var(--detail-color);
     font-size: 25px;
     border-radius: 5px;
     font-family: "Teachers", sans-serif;
     transition: all 0.3s ease;
+    color: var(--black);
 }
 
 #previous-button:hover, #next-button:hover {
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--detail-color-hover);
     color: var(--white);
-    background-color: transparent;
+    background-color: var(--detail-color-hover);
    
 }
 
