@@ -28,6 +28,8 @@ hideAllExceptFirst();
 
 // Event listeners for next and previous buttons
 const nextButton = document.getElementById("next-button");
+// Event listener for the "Next" button
+// Event listener for the "Next" button
 nextButton.addEventListener("click", () => {
   // Find the index of the currently visible voting row
   const visibleIndex = Array.from(votingRows).findIndex(
@@ -40,6 +42,22 @@ nextButton.addEventListener("click", () => {
   // Show the next voting row if exists, otherwise loop back to the first
   const nextIndex = (visibleIndex + 1) % votingRows.length;
   votingRows[nextIndex].style.display = "flex";
+
+  // Hide the "Previous" button if the first country is displayed
+  if (votingRows[nextIndex] === votingRows[0]) {
+    previousButton.style.display = "none";
+  } else {
+    previousButton.style.display = "block";
+  }
+
+  // Hide the "Next" button if the final results page is displayed
+  if (nextIndex === votingRows.length - 1) {
+    // Remove the "Next" button from display
+    nextButton.style.display = "none";
+  } else {
+    // If not the final results page, display the "Next" button
+    nextButton.style.display = "block";
+  }
 });
 
 const previousButton = document.getElementById("previous-button");
@@ -54,6 +72,13 @@ previousButton.addEventListener("click", () => {
   const previousIndex =
     (visibleIndex - 1 + votingRows.length) % votingRows.length;
   votingRows[previousIndex].style.display = "flex";
+
+  // Hide the "Next" button if the final results page is displayed
+  if (previousIndex === votingRows.length - 1) {
+    nextButton.style.display = "none";
+  } else {
+    nextButton.style.display = "block";
+  }
 });
 
 // Get all the input fields and spans
@@ -126,32 +151,34 @@ const updateWinningCountries = () => {
 // Call the function initially to display the winning country and number of points
 updateWinningCountries();
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Fetch the JSON data
   fetch("esc.json")
-      .then(response => response.json())
-      .then(data => {
-          // Iterate through each voting row
-          document.querySelectorAll('.voting-row').forEach((row, index) => {
-              // Get the country data from the JSON file
-              const countryData = data[index];
-              
-              // Update the label with the country name
-              row.querySelector('label').textContent = countryData.country;
-              
-              // Update the paragraph elements with the song name and artist
-              row.querySelector('#name').textContent = `${countryData.name}`;
-              row.querySelector('#song').textContent = `${countryData.song}`;
-          });
-      })
-      .catch(error => console.error('Error fetching JSON:', error));
-});
+    .then((response) => response.json())
+    .then((data) => {
+      // Iterate through each voting row
+      document.querySelectorAll(".voting-row").forEach((row, index) => {
+        // Get the country data from the JSON file
+        const countryData = data[index];
 
+        // Update the label with the country name
+        row.querySelector("label").textContent = countryData.country;
+
+        // Update the paragraph elements with the song name and artist
+        row.querySelector("#name").textContent = `${countryData.name}`;
+        row.querySelector("#song").textContent = `${countryData.song}`;
+      });
+    })
+    .catch((error) => console.error("Error fetching JSON:", error));
+
+  // Hide the "Previous" button when the page loads
+  previousButton.style.display = "none";
+});
 
 const limitValue = (input) => {
   if (input.value > 10) {
-      input.value = 10;
+    input.value = 10;
   } else if (input.value < 0) {
-      input.value = 0;
+    input.value = 0;
   }
-}
+};
