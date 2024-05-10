@@ -178,16 +178,37 @@ label {
     border: 1px solid var(--black);
     color: var(--black);
     background-color: transparent;
-   
 }
 
 input[type="number"] {
     width: 100%;
     padding: 12px;
-  /*   border-radius: 6px; */
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-size: 16px;
+    border-radius: 0 !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Remove default appearance */
+    appearance: none;
+    width: 20px; /* Width of the spin button */
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    border: none;
+    background-color: #ccc; /* Background color of the spin button */
+    cursor: pointer;
+    opacity: 0.5; /* Opacity of the spin button */
+}
+
+/* Style for the outer spin button (container) */
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove default appearance */
+    appearance: none;
+    margin: 0; /* Remove margin to avoid overlap with inner spin button */
 }
 
 .tooltip {
