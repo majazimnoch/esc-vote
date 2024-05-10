@@ -16,8 +16,8 @@
 }
 
 :root {
-    --detail-color: #e68263;
-    --detail-color-hover: #e68163d6;
+    --detail-color: #784ba0;
+    --detail-color-hover: #f77b75;
     --white: #fffcfc;
     --black: rgb(23, 22, 22);
 }
@@ -32,41 +32,63 @@ body {
 
 h1 {
     font-size: 40px;
+    color: var(--white);
 }
 
 h2 {
     font-size: 35px;
-    color: var(--secondary-color);
+    color: var(--white);
 }
 
 .container {
-    margin: 20px auto;
+    margin: 6px auto;
     max-width: 400px;
     height: 600px;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border: 1px red solid;
+   
     color: var(--black);
     gap: 20px;
+
+    @media (min-width: 1024px) {
+        margin: 20px auto;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+     }
 }
 
-.welcoming-box{
-    background-color: #FAACA8;
-    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
-    
-    border-radius: 10px;
- padding: 8px 12px;
+.welcoming-box {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.voting-box {
+   /*  border: 1px red solid; */
+}
+
+.voting-container  {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--white);
+   color: var(--black);
+    border-radius: 6px;
+   
+}
+
+.final-results  {
+    display: flex;
+    flex-direction: column;
 }
 
 .voting-row {
     display: flex;
     flex-direction: column;
-  
-
     border: 1px green solid;
     min-height: 200px;
-    gap: 8px;
+    gap: 15px;
 }
 
 .here {
@@ -74,9 +96,9 @@ h2 {
 }
 
 label {
-    border: 2px yellow solid;
     font-size: 20px;
-    color: #e68263;
+    color: var(--detail-color);
+    font-weight: 600;
 }
 
 .column {
@@ -88,21 +110,42 @@ label {
 }
 
 .vote-item {
-    border: 1px black solid;
+    background-color: var(--black);
+    color: var(--white);
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 10px;
     font-size: 20px;
 }
+
+.vote-item p {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.points-box {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+    background-color: #784ba0;
+    color: var(--white);
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
 .sum {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--black);
+    background-color: transparent;
+    border: 1px var(--white) solid;
     color: var(--white);
     font-size: 25px;
 }
@@ -114,38 +157,31 @@ label {
 }
 #previous-button, #next-button {
     border: 1px solid var(--white);
-    padding: 18px 12px;
-    background-color: var(--detail-color);
+    padding: 10px 12px;
+    background-color: var(--black);
     font-size: 25px;
-    border-radius: 5px;
+    border-radius: 6px;
     font-family: "Teachers", sans-serif;
     transition: all 0.3s ease;
-    color: var(--black);
+    color: var(--white);
 }
 
 #previous-button:hover, #next-button:hover {
-    border: 1px solid var(--detail-color-hover);
-    color: var(--white);
-    background-color: var(--detail-color-hover);
+    border: 1px solid var(--black);
+    color: var(--black);
+    background-color: transparent;
    
 }
 
 input[type="number"] {
     width: 100%;
     padding: 12px;
-    border-radius: 5px;
+  /*   border-radius: 6px; */
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-size: 16px;
 }
 
-.points-box {
-    display: flex;
-    flex-direction: row;
-    border: 1px red solid;
-    gap: 10px;
-    align-items: center;
-}
 .tooltip {
     position: relative;
     display: inline-block;
@@ -155,8 +191,8 @@ input[type="number"] {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: #555;
-    color: #fff;
+    background-color: var(--black);
+    color: var(--white);
     text-align: center;
     border-radius: 6px;
     padding: 5px;
