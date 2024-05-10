@@ -47,10 +47,7 @@ h2 {
     display: flex;
     flex-direction: column;
     padding: 20px;
-
     justify-content: space-between;
-    border: 2px red solid;
-   
     color: var(--black);
     gap: 20px;
 
@@ -67,10 +64,6 @@ h2 {
     padding: 8px 12px;
 }
 
-.voting-box {
-   /*  border: 1px red solid; */
-}
-
 .voting-container  {
     display: flex;
     flex-direction: column;
@@ -82,6 +75,7 @@ h2 {
 .final-results {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: var(--white);
     color: var(--black);
     border-radius: 6px;
@@ -89,12 +83,39 @@ h2 {
     gap: 20px;
 }
 
-.styling-results {
+.winner-h {
+   font-size: 20px;
+   color: var(--black);
+   font-weight: 600;
+}
+
+.winner-p {
     font-size: 20px;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.styling-results {
+    font-size: 60px;
+    color: var(--detail-color);
+    font-weight: 600;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+   
+}
+
+#winner {
+    font-size: 40px;
     color: var(--detail-color);
     font-weight: 600;
 }
 
+#points {
+    font-size: 40px;
+    color: var(--detail-color);
+    font-weight: 600;
+}
 .voting-row {
     display: flex;
     flex-direction: column;
@@ -124,8 +145,9 @@ label {
 .column {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -174,6 +196,7 @@ label {
     display: flex;
     flex-direction: row;
     gap:20px;
+    margin-bottom: 30px;
 }
 #previous-button, #next-button {
     border: 1px solid var(--white);
