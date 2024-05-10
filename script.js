@@ -147,3 +147,11 @@ document.addEventListener("DOMContentLoaded", function() {
       .catch(error => console.error('Error fetching JSON:', error));
 });
 
+
+const limitValue = (input) => {
+  if (input.value > 10) {
+      input.value = 10;
+  } else if (input.value < 0) {
+      input.value = 0;
+  }
+}
