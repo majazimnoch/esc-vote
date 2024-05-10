@@ -125,3 +125,25 @@ const updateWinningCountries = () => {
 
 // Call the function initially to display the winning country and number of points
 updateWinningCountries();
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Fetch the JSON data
+  fetch("esc.json")
+      .then(response => response.json())
+      .then(data => {
+          // Iterate through each voting row
+          document.querySelectorAll('.voting-row').forEach((row, index) => {
+              // Get the country data from the JSON file
+              const countryData = data[index];
+              
+              // Update the label with the country name
+              row.querySelector('label').textContent = countryData.country;
+              
+              // Update the paragraph elements with the song name and artist
+              row.querySelector('#name').textContent = `${countryData.name}`;
+              row.querySelector('#song').textContent = `${countryData.song}`;
+          });
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+});
+

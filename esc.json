@@ -1,41 +1,132 @@
-{
-  "countries": [
-    "Albania",
-    "Armenia",
-    "Australia",
-    "Austria",
-    "Azerbaijan",
-    "Belgium",
-    "Croatia",
-    "Cyprus",
-    "Czechia",
-    "Denmark",
-    "Estonia",
-    "Finland",
-    "France",
-    "Georgia",
-    "Germany",
-    "Greece",
-    "Iceland",
-    "Ireland",
-    "Israel",
-    "Italy",
-    "Latvia",
-    "Lithuania",
-    "Luxembourg",
-    "Malta",
-    "Moldova",
-    "Netherlands",
-    "Norway",
-    "Poland",
-    "Portugal",
-    "San Marino",
-    "Serbia",
-    "Slovenia",
-    "Spain",
-    "Sweden",
-    "Switzerland",
-    "Ukraine",
-    "United Kingdom"
-  ]
-}
+[
+  {
+    "country": "Sweden",
+    "song": "Unforgettable",
+    "name": "Marcus & Martinus"
+  },
+  {
+    "country": "Ukraine",
+    "song": "Teresa & Maria",
+    "name": "alyona alyona & Jerry Heil"
+  },
+  {
+    "country": "Germany",
+    "song": "Always On The Run",
+    "name": "ISAAK"
+  },
+  {
+    "country": "Luxembourg",
+    "song": "Fighter",
+    "name": "TALI"
+  },
+  {
+    "country": "Netherlands",
+    "song": "Europapa",
+    "name": "Joost Klein"
+  },
+  {
+    "country": "Israel",
+    "song": "Hurricane",
+    "name": "Eden Golan"
+  },
+  {
+    "country": "Lithuania",
+    "song": "Luktelk",
+    "name": "Silvester Belt"
+  },
+  {
+    "country": "Spain",
+    "song": "ZORRA",
+    "name": "Nebulossa"
+  },
+  {
+    "country": "Estonia",
+    "song": "(nendest) narkootikumidest ei tea me (küll) midagi",
+    "name": "5MIINUST x Puuluup"
+  },
+  {
+    "country": "Ireland",
+    "song": "Doomsday Blue",
+    "name": "Bambie Thug"
+  },
+  {
+    "country": "Latvia",
+    "song": "Hollow",
+    "name": "Dons"
+  },
+  {
+    "country": "Greece",
+    "song": "ZARI",
+    "name": "Marina Satti"
+  },
+  {
+    "country": "United Kingdom",
+    "song": "Dizzy",
+    "name": "Olly Alexander"
+  },
+  {
+    "country": "Norway",
+    "song": "Ulveham",
+    "name": "Gåte"
+  },
+  {
+    "country": "Italy",
+    "song": "La Noia",
+    "name": "Angelina Mango"
+  },
+  {
+    "country": "Serbia",
+    "song": "RAMONDA",
+    "name": "TEYA DORA"
+  },
+  {
+    "country": "Finland",
+    "song": "No Rules!",
+    "name": "Windows95man"
+  },
+  {
+    "country": "Portugal",
+    "song": "Grito",
+    "name": "iolanda"
+  },
+  {
+    "country": "Armenia",
+    "song": "Jako",
+    "name": "LADANIVA"
+  },
+  {
+    "country": "Cyprus",
+    "song": "Liar",
+    "name": "Silia Kapsis"
+  },
+  {
+    "country": "Switzerland",
+    "song": "The Code",
+    "name": "Nemo"
+  },
+  {
+    "country": "Slovenia",
+    "song": "Veronika",
+    "name": "Raiven"
+  },
+  {
+    "country": "Croatia",
+    "song": "Rim Tim Tagi Dim",
+    "name": "Baby Lasagna"
+  },
+  {
+    "country": "Georgia",
+    "song": "Firefighter",
+    "name": "Nutsa Buzaladze"
+  },
+  {
+    "country": "France",
+    "song": "Mon Amour",
+    "name": "Slimane"
+  },
+  {
+    "country": "Austria",
+    "song": "We Will Rave",
+    "name": "Kaleen"
+  }
+]
